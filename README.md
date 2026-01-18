@@ -1,7 +1,7 @@
-#**RV32I Pipelined Risc-V Core (SystemVerilog) **
+#RV32I Pipelined Risc-V Core (SystemVerilog) 
 Status: Under active development
 
-##**Design Intent**
+##Design Intent
 
 This repository documents a clean implementation of 32-bit RV32I RISC-V processor core in SystemVerilog.
 
@@ -11,14 +11,14 @@ The primary goals are
 - Integrate realistic data and instruction memory behaviour
 - maintain clear and review quality RTL with verification
 
-##**Scope**
+##Scope
 
 Initial focus:
 - RV32I base ISI
 - 5 stage pipeline(IF, ID, EX, MEM, WB)
 - FPGA-friendly synchronous design
 
-## Development Roadmap
+##Development Roadmap
 
 - [ ] Instruction Fetch stage
 - [ ] Register File
@@ -29,7 +29,7 @@ Initial focus:
 - [ ] Hazard handling
 - [ ] Branch handling / prediction
 
-## Toolchain
+##Toolchain
 
 - Language: SystemVerilog
 - Simulator: Vivado
