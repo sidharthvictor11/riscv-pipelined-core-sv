@@ -29,7 +29,7 @@ The Instruction Decode (ID) stage decodes the fetched RV32I instruction and extr
 
 ## Supported RV32I Instruction Formats
 
-![Instruction Formats](../../docs/images/ISA.png)
+![Instruction Formats](../../docs/ISA.png)
 
 | Format | Purpose |
 |---------|---------|
