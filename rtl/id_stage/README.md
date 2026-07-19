@@ -46,6 +46,8 @@ The Instruction Decode (ID) stage decodes the fetched RV32I instruction and extr
 
 The immediate generator reconstructs immediate values according to the RV32I specification.
 
+![Instruction Formats](../../docs/Immediate_format.png)
+
 Supported immediate types:
 
 - I Immediate
