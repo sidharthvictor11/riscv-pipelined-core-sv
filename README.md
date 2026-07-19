@@ -20,16 +20,32 @@ Initial focus:
 
 ##Development Roadmap
 
-- [ ] Instruction Fetch stage
+- [x] Program Counter
+- [x] Instruction Memory
+- [x] Fetch Stage
+- [x] Decode Stage
 - [ ] Register File
-- [ ] Decode & control logic
-- [ ] Execute stage (ALU)
-- [ ] Memory access stage
-- [ ] Writeback stage
-- [ ] Hazard handling
-- [ ] Branch handling / prediction
+- [ ] Control Unit
+- [ ] Execute Stage
+- [ ] ALU
+- [ ] Memory Stage
+- [ ] Write Back Stage
+- [ ] Hazard Detection
+- [ ] Forwarding Unit
+- [ ] RV32I Compliance Testing
 
-##Toolchain
 
-- Language: SystemVerilog
-- Simulator: Vivado
+## Tools
+
+- SystemVerilog
+- Xilinx Vivado
+- Git
+- GitHub
+
+## Future Work
+
+- Complete the 5-stage RV32I pipeline
+- Add UART peripheral
+- Implement CSR instructions
+- Integrate with FPGA
+- Improve verification using SystemVerilog testbenches
