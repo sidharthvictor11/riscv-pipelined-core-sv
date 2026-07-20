@@ -6,9 +6,28 @@
 
 ## Overview
 
-The Instruction Decode (ID) stage decodes the fetched RV32I instruction and extracts all fields required by the later pipeline stages. It also generates the immediate value based on the instruction format.
-
+The Instruction Decode (ID) stage decodes the fetched RV32I instruction, extracts instruction fields, reads source operands from the register file, and generates immediate values according to the RV32I instruction format.
 ---
+
+								Instruction Memory
+										│
+										▼
+								+----------------------+
+								| Fetch Stage (IF)     |
+								+----------------------+
+										│
+										▼
+								+----------------------+
+								| Decode Stage (ID)    |
+								| • Decode Instruction |
+								| • Read Register File |
+								| • Generate Immediate |
+								+----------------------+
+										│
+										▼
+								+----------------------+
+								| Execute Stage (EX)   |
+								+----------------------+
 
 ## Implemented Features
 
@@ -18,6 +37,10 @@ The Instruction Decode (ID) stage decodes the fetched RV32I instruction and extr
 - Destination register extraction (rd)
 - funct3 extraction
 - funct7 extraction
+- Register File (32 × 32-bit)
+  - Two asynchronous read ports
+  - One synchronous write port
+  - x0 register hardwired to zero
 - Immediate generation for:
   - I-Type
   - S-Type
@@ -82,18 +105,53 @@ typedef enum logic [6:0] {
 
 ---
 
+---
+
+## Register File
+
+The ID stage includes a 32 × 32-bit register file compliant with the RV32I ISA.
+
+### Features
+
+- 32 general-purpose registers (x0–x31)
+- Two asynchronous read ports
+- One synchronous write port
+- Active-low reset
+- Register x0 is hardwired to zero and cannot be modified
+
+### Interface
+
+Inputs
+
+- clk
+- reset_n
+- rs1_addr
+- rs2_addr
+- rd_addr
+- rf_wr_en
+- wr_data
+
+Outputs
+
+- rs1_data
+- rs2_data
+
 ## Outputs
 
-The decode stage generates:
+The ID stage generates:
 
 - opcode
 - funct3
 - funct7
-- rs1
-- rs2
-- rd
+- rs1 address
+- rs2 address
+- rd address
+- rs1 data
+- rs2 data
 - Immediate
 - Instruction type
+
+
 
 ---
 
